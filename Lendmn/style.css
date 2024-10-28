@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+}
+
+.menu_conn {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    animation: menuStart 1s;
+}
+
+.menu_conn .menu {
+    width: 90%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 45px;
+}
+
+.menu .menu_icon {
+    width: 50%;
+    margin-left: 25px;
+}
+
+.menu a .menu_icon img {
+    width: 100%;
+}
+
+.menu .menu_items {
+    width: 57%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.menu .menu_item{
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu .menu_items a {
+    text-decoration: none;
+    padding: 15px;
+    color: black;
+    font-weight: 500;
+    box-shadow: none;
+    border-radius: 25px;
+}
+
+.menu .menu_items a:hover{
+    box-shadow: 0 0 0 2px #ff7300;
+}
+
+.menu .menu_items a:hover p {
+    text-decoration: underline;
+}
+
+
+.menu .menu_search {
+    width: 18%;
+}
+
+.menu .menu_globe {
+    width: 5%;
+}
+
+.menu .menu_search {
+    display: flex;
+    justify-content: center;
+}
+
+.menu .menu_search input {
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 15px 0 0 15px;
+    border: 1px solid #ff7300;
+}
+
+.menu .menu_search .search_icon {
+    padding: 4px;
+    background-color: #ff7300;
+    border-radius: 0 15px 15px 0;
+    color: white;
+    padding-left: 8px;
+    padding-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu .menu_globe i {
+    font-size: 25px;
+    margin-left: 15px;
+    color: #ff7300;
+}
+
+
+
+.bg {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.floating-icons{
+    position: absolute;
+    right: 0;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.floating-icons i{
+    padding: 20px;
+    background-color: #ff7300;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 30px;
+}
+.floating-icons i .tooltip{
+    position: absolute;
+    right: 65px;
+    font-size: 20px;
+    text-wrap: nowrap;
+    background-color: rgb(50, 50, 50);
+    padding: 20px;
+    border-radius: 20px;
+    transition: 0.2s;
+    opacity: 0;
+    visibility: hidden;
+}
+.tooltip::after{
+    content: "";
+
+}
+.floating-icons i:hover > .tooltip{
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s;
+}
+
+.products{
+    width: 100%;
+    height: auto;
+}
+.products h1{
+    font-size: 3rem;
+}
+
+.product{
+    position: relative;
+    gap: 20px;
+    display: flex;
+    color: white;
+}
+.product img{
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    position: relative;
+}
+
+.card{
+    position: relative;
+    width: 50%;
+}
+
+.product .card span{
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+a{
+    text-decoration: none;
+}
+.product a{
+    border-radius: 25px;
+    text-transform: none;
+    background-color:#fff;
+    padding: 1rem;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    mix-blend-mode: screen;
+    transition: 0.3s;
+    width: min-content;
+    text-wrap: nowrap;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.product .orange-bg:hover,.product .blue-bg:hover{
+    transition: 0.3s;
+    text-decoration: underline;
+    color: white;
+    mix-blend-mode: normal;
+}
+.orange-bg:hover{
+    background-color:#ff7300;
+}
+.blue-bg:hover{
+    background-color: #225556;
+}
+
+.product a:hover i{
+    text-decoration:none !important;
+}
+
+.dropdown-container{
+    position: relative;
+}
+
+.dropdown{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    opacity: 0;
+    max-height: 0;
+    margin-top: 20px;
+    transition: all .2s ease;
+    top: 30px;
+    left: 0;
+    border-radius: 0 0 20px 20px;
+    text-wrap: nowrap;
+    list-style: none;
+    overflow: hidden;
+}
+
+.dropdown-container:hover > .dropdown{
+    min-width: 100%;
+    max-height: 999px;
+    width: max-content;
+    height: min-content;
+    opacity: 1;
+}
+.dropdown .item{
+    padding: 25px;
+    width: 100%;
+    background-color: white;
+}
+
+.dropdown .item:first-child{
+    border-radius: 0;
+    margin-top: 10px;
+}
+
+.dropdown .item:last-child{
+    border-radius: 0 0 20px 20px;
+}
+
+.dropdown .item:hover{
+    background-color: #ff7300;
+    text-decoration: underline;
+}
+
+.news .content{
+    display: flex;
+    flex-direction: column;
+}
+
+.news .recent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+}
+
+.recent .title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.see-more{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+    color: black;
+}
+
+.see-more:hover{
+    color:#ff7300;
+}
+
+.see-more:hover p{
+    color:#ff7300 !important;
+}
+
+.recent .img{
+    border-radius: 20px;
+    width: 50%;
+    position: relative;
+}
+
+.recent .img img{
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.recent .img p{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: azure;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.news .recent span{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+a:hover p{
+    text-decoration: underline;
+}
+
+.dim{
+    color: grey !important;
+}
+.container{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: min-content;
+    margin-top: 50px;
+}
+
+.container .content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 20px 0 20px;
+    width: 100%;
+}
+
+.news .recent span p{
+    color: black;
+}
+
+@keyframes menuStart {
+    0%{
+        margin-top:-100px;
+    }
+    100%{
+        margin-top: 0px;
+    }
+}

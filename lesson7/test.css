@@ -1,0 +1,60 @@
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container1, .container2, .container3, .container4, .container5{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid gray;
+    font-size: 25px;
+}
+
+.colored{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: bold;
+}
+.colored:nth-child(2){
+    background-color: aqua;
+}
+.colored:nth-child(3){
+    background-color: gray;
+}
+.colored:nth-child(4){
+    background-color: orange;
+}
+.colored:nth-child(5){
+    background-color: blue;
+}
+.boxes{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.container1 .boxes{
+    flex-direction: row;
+}
+.container2 .boxes{
+    flex-direction: row-reverse;
+}
+.container3 .boxes{
+    flex-direction: column;
+}
+.container4 .boxes{
+    flex-direction: column-reverse;
+}

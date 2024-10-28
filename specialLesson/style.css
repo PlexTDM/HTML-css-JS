@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+.main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.bottom{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+input{
+    display: none;
+}
+label{
+    position: relative;
+    width: min-content;
+}
+
+.label {
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 3px;
+    display: none;
+    position: absolute;
+    /* background: url("unchecked.png") no-repeat left center; */
+    /* padding-left: 15px; */
+}
+
+input[type=checkbox]:checked~.label {
+    color: #fff;
+    display: flex;
+}
+input[type=checkbox]:checked~.label input{
+    display: block;
+}
+
+.search{
+    animation: upndown 5s ease-in-out infinite;
+    position: relative;
+}
+
+.email{
+    animation: upndown 4s ease-out infinite;
+    position: relative;
+}
+
+.password{
+    animation: upndown 3s ease-in infinite;
+    position: relative;
+
+}
+
+@keyframes upndown {
+    0% {
+        transform: translateY(100px);
+    }
+    50%{
+        transform: translateY(-100px);
+    }
+    100%{
+        transform: translateY(100px);
+    }
+
+}

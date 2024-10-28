@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(35, 35, 35);
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 1cm;
+}
+.chessboard{
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+tr{
+    width: 100%;
+    aspect-ratio: 8/1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    
+}
+td{
+    height: 100%;
+    width: 100%;
+}
+.white{
+    background-color: aliceblue;
+}
+.black{
+    background-color: rgb(17, 17, 17);
+}
+/*  */

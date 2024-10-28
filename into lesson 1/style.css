@@ -1,0 +1,37 @@
+h1{
+    color:red
+}
+.class{
+    color:aqua
+}
+#id{
+    border:1px black;
+    border-style: outset;
+    width:min-content;
+    margin: 10px;
+    padding: 10px;
+}
+h4{
+    color: rgba(119, 15, 15, 0.429);
+}
+h6{
+    font-style: italic;
+}
+img{
+    opacity: 0.5;
+    width: min-content;
+}
+img:hover{
+    animation-duration: 1s;
+    transform: scale(1.2) translateY(25px);
+    transition:all 1s;
+    opacity: 1;
+}
+.div{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <form action="" class="">
+            <span class="formInput">
+                <label for="txt">Username</label>
+                <input type="text" name="txt">
+            </span>
+            <span class="formInput">
+                <label for="email">Email</label>
+                <input type="email" name="email">
+            </span>
+            <span class="formInput">
+                <label for="file">Profile Image</label>
+                <input type="file" name="file" id="pfpInput" accept="image/*">
+            </span>
+            <span class="formInput">
+                <label for="password">Profile Image</label>
+                <input type="password" name="password">
+            </span>
+            <span class="row">
+                <input type="checkbox" name="checkbox">
+                <label for="checkbox">Agree With Terms of Service</label>
+            </span>
+            <span class="formInput">
+                <label for="txt"></label>
+                <input type="button" value="Submit" id="submitForm">
+            </span>
+            
+            <span class="formInput">
+                <label for="range" id="rangeOut">10</label>
+                <input type="range" name="range" id="rangeInput" min="0" max="100" step="1" value="10">
+            </span>
+            <span class="formInput">
+                <label for="month">Month</label>
+                <input type="month" name="month">
+            </span>
+            <span class="formColor">
+                <label for="Color">Favourive Color</label>
+                <input type="color" name="color">
+            </span>
+            <span class="formInput">
+                <label for="time">Free time</label>
+                <input type="time" name="time">
+            </span>
+        </form>
+    </div>
+    <div>
+        <img id="pfp" src="" alt="">
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/5cf7186e0d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="">
+    <div class="bg">
+        <img src="img/bg.jpg" alt="" />
+    </div>
+    <div class="main-container grid place-items-center">
+        <div
+            class="content w-[90%] h-[95%] pb-40 backdrop-brightness-110 shadow-xl rounded-3xl p-10 relative flex flex-col gap-20">
+            <div class="shopping-cart absolute right-8 top-8 cursor-pointer z-10">
+                <i class="fa-solid fa-cart-shopping p-4 bg-black text-white rounded-xl"></i>
+                <span class="w-2 h-2 bg-red-600 absolute right-[10px] top-[10px] rounded-full"></span>
+            </div>
+            <div class="flex flex-row gap-2">
+                <div class="w-[50%] flex flex-col gap-12">
+                    <span>
+                        <p class="font-bold">Taste</p>
+                        <p class="text-xs">i cant see</p>
+                    </span>
+                    <h1 class="text-6xl font-bold">
+                        Delicious Food is Waiting For you
+                    </h1>
+                    <button class="bg-black text-white w-40 p-3 rounded-2xl rounded-br-none font-semibold">
+                        View Menu ->
+                    </button>
+                    <span class="text-3xl">
+                        <i class="fa-solid fa-burger bg-drop"></i>
+                        <i class="fa-solid fa-ice-cream bg-drop"></i>
+                        <i class="fa-solid fa-beer-mug-empty bg-drop"></i>
+                        <i class="fa-solid fa-bowl-food bg-drop"></i>
+                    </span>
+                </div>
+                <img src="img/food1.png" class="w-[50%] scale-150" alt="food" />
+            </div>
+            <div class="grid grid-cols-4 gap-x-8">
+                <div class="bg-drop relative pt-40">
+                    <img src="img/ramen.png" class="absolute top-[-125px] left-0 scale-125 cursor-pointer" alt="" />
+                    <span class="flex items-center justify-between">
+                        <p class="font-bold text-lg">Crab Ramen</p>
+                        <i class="fa-regular fa-heart bg-slate-300 p-2 rounded-full"></i>
+                    </span>
+                    <p>Spicy with garlic</p>
+                    <p>$ 24.00</p>
+                    <div class="shopping-cart absolute right-2 cursor-pointer z-10">
+                        <i class="fa-solid fa-cart-shopping p-4 bg-black text-white rounded-xl"></i>
+                    </div>
+                </div>
+                <div class="bg-drop relative pt-40">
+                    <img src="img/chicken.png" class="absolute top-[-100px] left-0 cursor-pointer" alt="" />
+                    <span class="flex items-center justify-between">
+                        <p class="font-bold text-lg">Chicken Slice</p>
+                        <i class="fa-regular fa-heart bg-slate-300 p-2 rounded-full"></i>
+                    </span>
+                    <p>Grill Fried</p>
+                    <p>$ 12.00</p>
+                    <div class="shopping-cart absolute right-2 cursor-pointer z-10">
+                        <i class="fa-solid fa-cart-shopping p-4 bg-black text-white rounded-xl"></i>
+                    </div>
+                </div>
+
+                <div class="col-span-2 p-4">
+                    <h1 class="font-bold text-3xl">
+                        We have Delicious food <br />Tasty food in town
+                    </h1>
+                    <br />
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Repellendus dolorum beatae nam. Illum dignissimos exercitationem
+                        laudantium magnam
+                    </p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="flex flex-col gap-10 pt-8">
+                    <h1 class="font-bold text-3xl">
+                        Our team of registered nurses and skilled healthcare professionals provide in-home nursing.
+                    </h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+                        Autem similique, modi quaerat dignissimos vero aut nisi <br> atque perspiciatis,
+                        est rem asperiores earum laborum  <br>commodi ab sequi quod, explicabo quia totam.</p>
+                </div>
+                <div class="relative">
+                    <img src="img/ramen.png" class="relative top-[-60px]" alt="Healthy Food">
+                    <span class="absolute top-0 right-8 bg-rose-700 p-9 rounded-full">
+                        <span class="italic absolute top-5 right-3 text-white font-bold rounded-full">$25.89</span>
+                    </span>
+                </div>
+            </div>
+            <div class="flex gap-8">
+                <img src="/img/app1.png" class="object-contain w-[300px]" alt="">
+                <img src="img/app2.png" class="object-contain w-[300px] mr-8" alt="">
+                <div class="h-full flex flex-col gap-8 justify-center">
+                    <h1 class="font-extrabold text-4xl">
+                        App is Available
+                    </h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Nisi ut excepturi earum. Dolorum fugit
+                        exercitationem aperiam, adipisci soluta corrupti repellendus.</p>
+                    <div>
+                        <button><img src="/img/apple.svg" width="180" alt=""></button>
+                        <button><img src="/img/google.svg" width="180" alt=""></button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h6> LET'S TALK</h6>
+                <span class="flex justify-between">
+                    <h1 class="text-3xl font-bold">Want to Reserve a table?</h1>
+                    <button class="bg-black text-white w-40 p-1 rounded-2xl rounded-tl-none font-semibold">
+                        Contact us now
+                    </button>
+                </span>
+                <br><hr class="border-black"><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio facere totam voluptate beatae reprehenderit assumenda
+                    <br>ipsum quia minima vel accusamus commodi odit, aperiam, praesentium quo accusantium quis!</p>
+            </div>
+            <footer class="flex justify-between font-medium px-32 relative pb-20">
+                <div>
+                    <h2 class="text-2xl font-bold">Taste</h2>
+                    <p>Lorem ipsum</p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-10">Our Services</h2>
+                    <p>Pricing</p>
+                    <p>Tracking</p>
+                    <p>Report a bug</p>
+                    <p>Terms of service</p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-10">Our Company</h2>
+                    <p>Reporting</p>
+                    <p>Get in Touch</p>
+                    <p>Management</p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-10">Address</h2>
+                    <p>121 King St. <br>VC3000, US <br>888-123-42276 <br>info@example.com</p>
+                </div>
+                <img src="img/croissant.png" class="absolute -right-32 bottom-0 w-80 -rotate-90" alt="">
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

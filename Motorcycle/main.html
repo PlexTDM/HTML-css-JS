@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="">
+    <div class="sidebar w-32 h-full absolute right-0 bottom-0 top-0 backdrop-brightness-50 text-slate-600 text-4xl flex flex-col items-center pt-20 gap-5">
+        <i class="fa-brands fa-vk"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-square-facebook mb-28"></i>
+        <span class="w-2 h-2 bg-emerald-500 rounded-md mb-4"></span>
+        <span class="w-2 h-2 bg-emerald-900 rounded-md mb-4"></span>
+        <span class="w-2 h-2 bg-emerald-900 rounded-md mb-4"></span>
+        <span class="w-2 h-2 bg-emerald-900 rounded-md mb-4"></span>
+        <span class="w-2 h-2 bg-emerald-900 rounded-md mb-4"></span>
+    </div>
+    <div class="main flex flex-col w-full h-full mr-48 ">
+        <nav class="flex flex-row justify-between ml-24 pt-16 pb-10 pr-48 h-min items-center">
+            <h1 class="font-extrabold text-3xl">Kawasaki</h1>
+            <menu class="flex flex-row gap-10 text-lg">
+                <a href="" class="border-b-emerald-400 border-b">Products</a>
+                <a href="">Motorcycles</a>
+                <a href="">Accessories</a>
+                <a href="">Service</a>
+                <a href="">Shop</a>
+                <a href="">Contact us</a>
+            </menu>
+            <div class="flex flex-row gap-5">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </nav>
+        <div class="content h-full flex flex-row w-full pr-36">
+            <div class="w-[50%] h-full motorcycle">
+                <img src="motorcycle.png" class="motorcycle" alt="">
+            </div>
+            <div class="w-[50%] mt-20 flex flex-col gap-4">
+                <h1 class="uppercase text-6xl font-bold">ninja zx-10r se</h1>
+                <p class="text-gray-300 text-2xl mb-8">At 1 900 000 Rubles</p>
+                <p class="w-full text-gray-300 text-">Lorem, ipsum illum eaque cupiditate obcaecati assumenda perspiciatis consectetur delectus quam! Saepe labore error deleniti dignissimos neque dolorem dolorum inventore beatae quis provident!</p>
+                <button class="bg-green-500 w-28 p-2">Check Out</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute right-0 bottom-0 h-48 backdrop-brightness-[.5] left-[45%] grid grid-cols-3 pr-32">
+        <div class="backdrop-brightness-50 w-full h-full p-6 flex flex-col items-center justify-between border-r border-r-emerald-800">
+            <span class="flex w-full items-center justify-around"><p>01</p><div class="border-b-green-400 border-b w-20 h-1"></div></span>
+            <span class="uppercase text-xl">
+                <p>ninja</p>
+                <p>zx-10r se</p>
+            </span>
+        </div>
+        <div class="w-full h-full p-6 flex flex-col items-center brightness-50">
+            <span class="flex w-full items-center gap-5">02</span>
+            <span class="uppercase text-xl">
+                <p>ninja</p>
+                <p>zx-10r se</p>
+            </span>
+        </div>
+        <div class="w-full h-full p-6 flex flex-col items-center brightness-50">
+            <span class="flex w-full items-center gap-5">03</span>
+            <span class="uppercase text-xl">
+                <p>ninja</p>
+                <p>zx-10r se</p>
+            </span>
+        </div>
+
+    </div>
+</body>
+</html>

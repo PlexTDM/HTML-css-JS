@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(35, 35, 35);
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 1cm;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+table{
+    border: 1px solid black;
+    width: 100%;
+    aspect-ratio: 2/1;
+}
+tr{
+    border: 1px solid black;
+    width: auto;
+    height: auto;
+}
+td{
+    border: 1px solid black ;
+    width: 100px;
+    height: auto;
+}
+.color1{
+    background-color: brown;
+}
+.color2{
+    background-color: cadetblue;
+}
