@@ -188,7 +188,8 @@ body {
     gap: 20px;
     display: flex;
     color: white;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    flex: 1;
     width: 100%;
     flex-grow: 1;
 }
@@ -202,10 +203,8 @@ body {
 
 .card {
     position: relative;
-    /* max-height: 250px; */
     overflow: hidden;
     border-radius: 20px;
-    max-width: 50%;
 }
 
 .product .card span {
@@ -404,26 +403,24 @@ a:hover p {
 
 .container_3 {
     display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 85%;
-    margin-left: 7.5%;
-    margin-right: 7.5%;
+    justify-content:space-around;
+    width: 100%;
+    padding: 50px 0 50px 0;
 }
 
 .container_3 .cards {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 20px;
     width: 100%;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* flex-wrap:wrap */
 }
 
 .container_3 .card_items {
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(to top, #ff6b64 0%, #ff7300 100%);
-    width: 400px;
     height: 350px;
     justify-content: space-between;
     border-radius: 30px;
@@ -432,7 +429,7 @@ a:hover p {
 }
 
 .card_items .medee {
-    width: 55%;
+    width: fit-content;
     height: 10%;
     padding: 15px;
     background-color: white;
@@ -559,7 +556,9 @@ h5 {
 }
 .banner-container{
     margin-top: -100px;
-    padding:0 30px 0 30px
+    width: 100%;
+    padding:0 30px 0 30px;
+    position: relative;
 }
 .banner{
     width: 100%;
@@ -567,39 +566,60 @@ h5 {
     height: 379px;
     border-radius: 25px;
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     border: 1px solid #ff7300;
+    flex-direction: row-reverse;
+    padding: 0 50px;
 }
 .banner .img{
     height: 100%;
     position: relative;
+    grid-area: 1/1;
 }
 .banner .img img{
-    position: absolute  ;
-    object-fit: contain;
+    position: absolute;
+    object-fit: cover;
     width: 300px;
     bottom: 0;
-    left: 50px;
+    left: 0;
 }
 
 .banner .text{
-    width: 40%;
-    margin-left: 40%;
+    grid-area: 1/2;
+    position: relative;
+    max-width: 550px;
+    width: fit-content;
+    /* margin-left: 35vw; */
+    text-wrap: wrap;
     display: grid;
     place-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
     color: white;
 }
+
+.banner .text > * {
+    word-break:normal;
+    text-wrap:wrap;
+    /* line-break:anywhere; */
+}
+
 .banner span{
-    display: flex;
-    width: fit-content;
+    width: 100%;
     height: fit-content;
     gap: 20px;
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr); */
+    display: flex;
+    align-items: center;
+
 }
 .banner span img{
+    width: 170px;
+    height: 100%;
     cursor: pointer;
-    transition: 1s;
+    transition: all 0.5s ease-in;
 }
 .banner span img:hover{
     transform: translateY(-15px);
@@ -686,6 +706,82 @@ footer .icons a:hover{
     border-color: #484848;
 }
 
+input[type=checkbox] {
+    display:none;
+}
+
+.tablet-nav{
+    width: 100%;
+    height: fit-content;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+#menu{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 1s;
+}
+
+#menu + label{
+    z-index: 100;
+    height: 50px;
+    aspect-ratio: 1/1;
+    padding: 0 0 0 0px;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu:checked + label{
+    height: 50px;
+    aspect-ratio: 1/1;
+    padding: 0 0 0 0px;
+    color: grey;
+}
+
+#menu ~ nav{
+    width: 100%;
+    color: #484848;
+    list-style: none;
+    font-weight: 600;
+    flex-direction: column;
+    z-index: 10;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+#menu:not(:checked) ~ nav{
+    background-color: aliceblue;
+    width: 100%;
+    max-height: 0 !important;
+    /* display: none; */
+}
+
+#menu:checked ~ nav {
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    max-height: 1000px;
+}
+
+#menu ~ nav li{
+    padding: 15px;
+    cursor: pointer;
+}
+
+#menu:checked ~ nav li:hover {
+    background-color: #ff7300;
+    color: white;
+    text-decoration: underline;
+}
+
 @keyframes menuStart {
     0% {
         margin-top: -100px;
@@ -693,5 +789,92 @@ footer .icons a:hover{
 
     100% {
         margin-top: 0px;
+    }
+}
+
+@media screen and (max-width:1024px) {   
+    .container_3 .cards {
+        flex-wrap: wrap;
+        justify-content: start;
+        padding-left: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .menu_conn{
+        display: none;
+    }
+    #menu + label{
+        display: flex;
+    }
+
+    .banner{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: fit-content;
+        place-items: center;
+        height: 800px;
+        overflow-y: hidden;
+        padding: 0 10px;
+        text-align: center;
+        place-items: center;
+    }
+    .tablet-nav{
+        display: flex;
+    }
+    .banner .text{
+        grid-area: 1/1;
+        word-break: normal;
+        gap: 10px;
+    }
+    .banner .img{
+        grid-area: 2/1;
+        height: 600px;
+    }
+    .banner .img img{
+        position: relative;
+        height: 600px;
+        width: auto;
+        
+    }
+}
+
+@media screen and (max-width:768px) {
+    .products{
+        padding: 20px;
+    }
+    .products h1,.news h1   {
+        font-size: 26px;
+    }
+    .product{
+        flex-direction: column;
+    }
+    .product .card{
+        width: 100%;
+    }
+    .banner .text span{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .container_3 .cards {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .banner{
+        height: 850px;
+    }
+    .banner .text{
+        padding-bottom: 0;
+    }
+    .banner .img img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .banner .img{
+        width: 100%;
     }
 }

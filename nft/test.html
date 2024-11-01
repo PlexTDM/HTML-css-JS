@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Circle with End Circles</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .progress-circle {
+            position: relative; 
+            width: 200px;
+            height: 200px;
+            background: #222;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .progress-circle:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                #f28b22 0deg, 
+                #f28b22 270deg, /* Adjust this value for the angle of progress */
+                #222 270deg 360deg
+            );
+            mask-image: radial-gradient(circle, transparent 55%, black 56%);
+            z-index: 2;
+        }
+
+        /* Circle at the start of the progress bar */
+        .progress-circle::after {
+            content: '';
+            position: absolute;
+            top:50%;
+            left: 5%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background-color: #f28b22;
+            border: 5px solid black;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        /* Circle at the end of the progress bar */
+        .progress-circle .end-circle {
+            content: '';
+            position: absolute;
+            top: 45%;
+            left: 40%;
+            transform: rotate(270deg) translate(100px, 0); /* Adjust this value for position */
+            width: 30px;
+            height: 30px;
+            background-color: #f28b22;
+            border-radius: 50%;
+            border: 5px solid black;
+            z-index: 2;
+        }
+
+        .progress-content {
+            z-index: 1;
+            position: relative;
+            width: 90%;
+            height: 90%;
+            background: rgb(166,165,161);
+            background: linear-gradient(0deg, rgba(166,165,161,1) 5%, rgba(15,15,15,1) 35%, rgba(15,15,15,1) 65%, rgba(133,133,133,1) 95%);
+            border-radius: 50%;
+        }
+
+        .progress-content p {
+            margin: 5px 0;
+        }
+
+        .border{
+            position: absolute;
+            border-radius: 50%;
+            top: 15px;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+        }
+
+        .inner-circle{
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            border-radius: 50%;
+            border-width: 4px;
+            border-style: solid;
+            padding: 5px;
+            background-color: #111;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-circle">
+        <div class="progress-content">
+            <div class="border">
+                <div class="inner-circle">
+                    <p>Public Test</p>
+                    <p>Launch IDO</p>
+                    <p>Onboarding</p>
+                </div>
+            </div>
+        </div>
+        <div class="end-circle"></div>
+    </div>
+</body>
+</html>
+

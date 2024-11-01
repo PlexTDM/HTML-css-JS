@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(44, 44, 44);
+    display: grid;
+    place-items: center;
+}
+
+.main{
+    width: 245px;
+    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+.item{
+    background-color: aqua;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+}
+
+.item:last-child >* {
+    width: 20px;
+    aspect-ratio: 1/1;
+    background-color: blue;
+    position: absolute;
+    animation-duration: .2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+
+.item:last-child div:first-child{
+    animation-name: nines;
+}
+.item:last-child div:last-child{
+    animation-name: nine-s;
+}
+
+@keyframes nines {
+    50%{
+        transform: translateX(35px);
+    }
+    100%{
+        transform: translate(35px, 35px);
+    }
+}
+
+@keyframes nine-s {
+    0%{
+        transform: translate(35px, 35px);
+    }
+    50%{
+        transform: translateY(35px);
+    }
+    100%{
+    }
+}
+
+
+.item:first-child div{
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side,#ffa516 94%,#0000) top/8px 8px no-repeat,
+      conic-gradient(#0000 30%,#ffa516);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation: l13 1s infinite linear;
+  }
+  @keyframes l13{ 
+    100%{transform: rotate(1turn)}
+  }
