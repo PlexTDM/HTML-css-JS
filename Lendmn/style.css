@@ -484,21 +484,30 @@ a:hover p {
 .itgel {
     width: 100%;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itgel .wrapper{
+    width: min(1000px, 100%);
+    height: fit-content;
 }
 
 .itgel_item {
-    width: 60%;
-    height: 300px;
+    /* height: 300px; */
+    width: 100%;
+    padding: 60px 20px;
     background-color: #1a3b70;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    margin-left: 22%;
     border-radius: 25px;
     line-height: 60px;
     transform: translateY(-250px);
+    gap: 20px;
 }
 
 .itgel_item a {
@@ -545,8 +554,10 @@ h5 {
 }
 
 .itgel_item h1 {
-    font-size: 50px;
-    line-height: 40px;
+    font-size: 60px;
+    /* line-height: 40px; */
+    line-height: 1.1;
+    font-weight: 900;
 }
 
 .itgel_item h5 {
@@ -782,6 +793,31 @@ input[type=checkbox] {
     text-decoration: underline;
 }
 
+.nav-dropdown{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.nav-dropdown .wrapper{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0fr;
+    flex-direction: column;
+    transition: all 1s;
+}
+
+.nav-dropdown .item{
+    font-size: 0.9rem;
+    padding-left: 15px;
+}
+
+#smol-dropdown:checked ~ .wrapper{
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+}
+
 @keyframes menuStart {
     0% {
         margin-top: -100px;
@@ -839,6 +875,28 @@ input[type=checkbox] {
     }
 }
 
+@media screen and (max-width:824px) {
+    .tablet-nav{
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .recent{
+        flex-direction: column !important;
+        flex-grow: 1;
+        padding: 20px;
+    }
+    .recent .img{
+        width: 100%;
+    }
+    .recent span{
+        width: 100% !important;
+    }
+}
+
 @media screen and (max-width:768px) {
     .products{
         padding: 20px;
@@ -859,6 +917,20 @@ input[type=checkbox] {
     .container_3 .cards {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
+    }
+    .itgel_item{
+        padding: 30px 10px;
+    }
+    .itgel_item h1{
+        font-size: 30px;
+    }
+    .itgel .wrapper{
+        padding: 20px;
+        width: 100%;
+        height: fit-content;
+    }
+    footer{
+        flex-direction: column;
     }
 }
 

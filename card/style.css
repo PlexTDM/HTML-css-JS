@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: slategrey;
+  width: 100%;
+  height: 100vh;
+}
+
+.cards {
+  display: flex;
+  gap: 50px;
+  width: 50%;
+  height: 220px;
+  position: relative;
+}
+.cards .card {
+  position: relative;
+}
+.cards .card img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 1s;
+}
+.cards .card::before {
+  content: "";
+  display: block;
+  background-image: url("/aa.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.6s;
+  transition-delay: 50ms;
+  transform: translateY(50px);
+  overflow: visible;
+}
+.cards .card:nth-child(2)::before {
+  background-image: url("./b.png");
+}
+.cards .card:nth-child(3)::before {
+  background-image: url("./c.png");
+}
+.cards .card:hover::before {
+  opacity: 1;
+  transform: translateY(-80px);
+}
+.cards .card:hover img {
+  transform: rotateX(65deg);
+  opacity: 0.4;
+}/*# sourceMappingURL=style.css.map */

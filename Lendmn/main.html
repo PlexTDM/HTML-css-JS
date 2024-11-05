@@ -22,11 +22,20 @@
       <input type="checkbox" name="menu" id="menu" value="a">
       <label for="menu"><i class="fa-solid fa-bars"></i></label>
       <nav>
-          <li>Home</li>
-          <li>Search</li>
-          <li>Top Animes</li>
-          <li>Top Mangas</li>
-          <li>Profile</li>
+          <li>Бидний тухай</li>
+          <div class="nav-dropdown">
+            <input type="checkbox" name="menu" id="smol-dropdown" value="a">
+            <label for="smol-dropdown">
+              <li><a>Бүтээгдэхүүн<i class="fa-solid fa-caret-down"></i></a></li>
+            </label>
+            
+            <div class="wrapper">
+              <li><a class="item">Зээлийн бүтээгдэхүүн</a></li>
+              <li><a class="item">Хөрөнгө оруулалт</a></li>
+            </div>
+          </div>
+          <li>Хөрөнгө оруулагчдад</li>
+          <li>Мэдээ</li>
       </nav>
     </div>
     <div class="menu_conn">
@@ -183,12 +192,14 @@
       <div class="itgel_img">
         <img src="./itgel.webp" alt="" />
       </div>
-      <div class="itgel_item">
-        <h1>2022 оны шилдэг ажил <br> олгогч компани</h1>
-        <h5>Бидэнтэй хамт өөрийгөө асаа</h5>
-        <a href="">
-          <p>Нээлттэй ажлын байр</p>
-        </a>
+      <div class="wrapper">
+        <div class="itgel_item">
+          <h1>2022 оны шилдэг ажил <br> олгогч компани</h1>
+          <h5>Бидэнтэй хамт өөрийгөө асаа</h5>
+          <a href="">
+            <p>Нээлттэй ажлын байр</p>
+          </a>
+        </div>
       </div>
     </div>
 
