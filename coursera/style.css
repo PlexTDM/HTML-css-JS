@@ -1,0 +1,265 @@
+:root {
+  --background: #48639c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* background-color: var(--background); */
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(69, 56, 56);
+  overflow-x: hidden;
+}
+/* global styles */
+
+h2 {
+  font-size: 40px;
+  color: black;
+}
+
+::selection {
+  color: white;
+  background-color: black;
+}
+
+.cards > div {
+  height: 400px;
+  border: 1px solid black;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+
+/* ----------header------------ */
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+header p {
+  font-size: 1.5rem;
+  font-weight: 1000;
+}
+
+/* -------------Main--------------- */
+
+.opening {
+  text-align: start;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: 10%;
+}
+
+main {
+  padding-bottom: 0px;
+  width: min(100%, 1000px);
+}
+
+/* ------------------Home----------------- */
+
+#styles .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+#styles .cards img {
+  object-fit: cover;
+  width: 100%;
+}
+
+#styles .cards > div p {
+  background-image: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 0.8) 20%,
+    rgba(17, 17, 17, 0) 100%
+  );
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  position: absolute;
+  inset: auto 0 0 0;
+  margin: 0;
+  padding-top: 20px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 1.8rem;
+  color: rgb(200, 200, 200);
+  cursor: pointer;
+}
+
+#styles .cards > div:hover p {
+  opacity: 1;
+}
+
+/* --------------Location------------- */
+
+#location {
+  display: flex;
+  flex-direction: column;
+}
+
+#location > p {
+  align-self: center;
+  color: grey;
+  text-align: center;
+}
+
+#location .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+#location .cards > div {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+}
+
+#location .cards > div > img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 200px;
+}
+
+#location .text {
+  padding: 10px 20px;
+  display: grid;
+  grid-template-rows: 1fr 1fr auto;
+}
+
+.tele {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.tele img {
+  width: 18px;
+  height: 18px;
+}
+
+/* -------------footer----------------- */
+
+footer {
+  background-image: url(/images/banner-cropped.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  width: min(100%, 1300px);
+  border-top: 1px solid black;
+  margin-top: 100px;
+}
+
+footer .contact {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+footer img {
+  object-fit: contain;
+}
+footer p {
+  cursor: pointer;
+}
+
+footer h3 {
+  font-size: 2.2rem;
+  color: black;
+}
+
+.copyright {
+  border-top: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 10px 5vw;
+}
+/* ---------------navbar------------------ */
+
+nav {
+  padding: 0.75vw 0.75vw;
+  border-radius: 100px;
+  width: min(100%, 1000px);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  cursor: pointer;
+}
+
+nav .items {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+nav a {
+  text-align: center;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 1.7rem;
+  color: black;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: all 300ms;
+  padding: 0 10px;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  transform: translateX(10px);
+  right: 0;
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: rgb(0, 0, 0);
+  transition: width 300ms ease-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 1110px) {
+  nav {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  nav a {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  nav {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  nav .item {
+    width: 100vw;
+  }
+}

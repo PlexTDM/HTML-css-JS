@@ -1,41 +1,42 @@
 const dateP = document.getElementById('date')
 const timeP = document.getElementsByClassName('time')
-const forecast = document.getElementsByClassName('day-month') 
+const forecast = document.getElementsByClassName('day-month')
 const forecast2 = document.getElementsByClassName('dayofweek')
 let date = new Date()
-const months = ['January','February','March','April','May','June','July','August','September','October','November','December']
-const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-const updateTime = ()=>{
-    let hour = date.getHours()
-    let ampm = 'AM'
-    let day = date.getDate()
-    let month = months[date.getMonth()]
-    let year = date.getFullYear()
-    if (hour>12){
-        hour-=12
-        ampm = 'PM'
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+const updateTime = () => {
+  let hour = date.getHours()
+  let ampm = 'AM'
+  let day = date.getDate()
+  let month = months[date.getMonth()]
+  let year = date.getFullYear()
+  if (hour > 12) {
+    hour -= 12
+    ampm = 'PM'
+  }
+  if (hour == 12) {
+    ampm = 'PM'
+  }
+  minutes = date.getMinutes()
+  if (minutes < 10) {
+    minutes = '0' + minutes
+  }
+  dateP.innerText = `${day} ${month}, ${year}`
+  for (let i = 0; i < forecast.length; i++) {
+    forecast[i].innerText = day + i + ' ' + month.toLowerCase()
+  }
+  for (let i = 0; i < forecast2.length; i++) {
+    j = date.getDay() + i + 1
+    if (j >= 7) {
+      j = j - 7
     }
-    if(hour == 12){
-        ampm = 'PM'
-    }
-    minutes = date.getMinutes()
-    if (minutes<10){
-        minutes = '0'+minutes
-    }
-    dateP.innerText = `${day} ${month}, ${year}`
-    for (let i = 0; i<forecast.length;i++){
-      forecast[i].innerText = day + i + ' ' + month.toLowerCase()
-    }
-    for (let i = 0; i<forecast2.length;i++){
-      j = date.getDay()+i+1
-      if(j>=7){
-        j = j-7
-      }
-      forecast2[i].innerText = weekdays[j]
-    }
-    for (let i = 0;i<timeP.length; i++){
-        timeP[i].innerText = `${hour}:${minutes} ${ampm}`
-    }
+    forecast2[i].innerText = weekdays[j]
+  }
+  for (let i = 0; i < timeP.length; i++) {
+    timeP[i].innerText = `${hour}:${minutes} ${ampm}`
+  }
 
 }
 updateTime()
@@ -72,39 +73,39 @@ for (i = 0; i < x.length; i++) {
     create a new DIV that will act as an option item:*/
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-        /*when an item is clicked, update the original select box,
-        and the selected item:*/
-        var y, i, k, s, h, sl, yl;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        sl = s.length;
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < sl; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            yl = y.length;
-            for (k = 0; k < yl; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
+    c.addEventListener("click", function (e) {
+      /*when an item is clicked, update the original select box,
+      and the selected item:*/
+      var y, i, k, s, h, sl, yl;
+      s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+      sl = s.length;
+      h = this.parentNode.previousSibling;
+      for (i = 0; i < sl; i++) {
+        if (s.options[i].innerHTML == this.innerHTML) {
+          s.selectedIndex = i;
+          h.innerHTML = this.innerHTML;
+          y = this.parentNode.getElementsByClassName("same-as-selected");
+          yl = y.length;
+          for (k = 0; k < yl; k++) {
+            y[k].removeAttribute("class");
           }
+          this.setAttribute("class", "same-as-selected");
+          break;
         }
-        h.click();
+      }
+      h.click();
     });
     b.appendChild(c);
   }
   x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
-      /*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      this.classList.toggle("select-arrow-active");
-    });
+  a.addEventListener("click", function (e) {
+    /*when the select box is clicked, close any other select boxes,
+    and open/close the current select box:*/
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
 }
 function closeAllSelect(elmnt) {
   /*a function that will close all select boxes in the document,

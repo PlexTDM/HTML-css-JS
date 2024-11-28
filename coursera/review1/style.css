@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  background-color: #edefee;
+  font-family: "Courier New", Courier, monospace;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+header > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+  background-color: cadetblue;
+  border-radius: 10px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+nav li {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-left: 2.5%;
+  margin-right: 2.55%;
+}
+
+nav li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+section {
+  display: flex;
+}
+
+section article {
+  background-color: bisque;
+  border-radius: 10px;
+  padding: 1rem 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+section article #para {
+  padding-top: 1rem;
+  font-size: 12px;
+}
+
+section .home-heading {
+  background-image: url(logos/Asset\ 9@4x.png);
+  background-color: whitesmoke;
+}
+
+section .home-heading-two:nth-child(1) {
+  margin-right: 1rem;
+}
+
+section .home-heading-two:nth-last-child(1) {
+  margin-left: 1rem;
+}
+
+article {
+  flex: 1;
+}
+
+section article p {
+  text-align: justify;
+}
+
+footer {
+  display: flex;
+}
+
+footer div {
+  flex: 1;
+}
+
+footer div img {
+  height: 64px;
+  width: auto;
+}
+
+footer div p {
+  text-align: right;
+  border-top: 2px solid black;
+}
